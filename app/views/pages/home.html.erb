@@ -4,3 +4,15 @@
 
 
 <h1>ceci est un test de git</h1>
+<p class="navbar-lewagon"></p>
+<div class="container" id="banner-typed-text">
+<br>
+
+<% if user_signed_in? %>
+<p>Welcome </p>
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<% end %>
+
+
+</div>
