@@ -25,9 +25,10 @@
           <div class="card-header">
             <h4 style="text-align: center"><strong>Reservez </strong></h4>
             <hr>
-            <h5 style="text-align: center"><%= @vespa.price %> euros / jour
-            </h5>
-
+            <h5 style="text-align: center"><%= @vespa.price %> euros / jour</h5>
+            <div>
+              <%= render "bookings/new", vespa: @vespa, booking: @booking %>
+            </div>
           </div>
           <div class="card-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi mollitia, necessitatibus quae sint natus.</p>
