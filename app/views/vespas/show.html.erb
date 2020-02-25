@@ -46,15 +46,12 @@
             <h2><strong>Photos</strong></h2>
           </div>
           <div class="cards">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1516423485787-e433022a4801?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80)">
-
-             <div></div>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @vespa.photo.key, height: 300, width: 400, crop: :fill %>')">
+              1
             </div>
-
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1557073725-b890f79efd27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)">
               2
             </div>
-
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521118702313-63fca89fe1fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80)">
               3
             </div>
