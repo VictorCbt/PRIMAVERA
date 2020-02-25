@@ -21,6 +21,7 @@ class VespasController < ApplicationController
 
   def show
     @vespa = Vespa.find(params[:id])
+    @booking = Booking.new
   end
 
   def destroy
