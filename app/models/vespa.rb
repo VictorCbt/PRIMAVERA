@@ -3,6 +3,8 @@ class Vespa < ApplicationRecord
   has_many  :bookings, dependent: :destroy
   has_many :reviews, through: :bookings, dependent: :destroy
 
+  has_one_attached :photo
+
   validates :name, presence: true, uniqueness: true
   validates :model, presence: true
   validates :cylinder, presence: true, inclusion: { in: %w(50cc 125cc 250cc 300cc electrique)}
