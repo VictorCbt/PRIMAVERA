@@ -1,0 +1,85 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1507416051062-8a3d4f400399?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+  <%= @vespa.name %>
+</div>
+
+
+
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-md-8">
+         <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <h2><strong>Modele - <%= @vespa.model %> - <%= @vespa.cylinder%></strong></h2>
+          </div>
+          <div class="card-body">
+            <p> Description de mon offre :
+              <hr>
+              <%= @vespa.description %>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolor, dolore, quae quisquam porro eaque odio cum aut. Suscipit velit fuga, modi expedita aut sed quae obcaecati eos voluptates sint!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-outline-secondary my-4" id="booking">
+          <div class="card-header">
+            <h4 style="text-align: center"><strong>Reservez </strong></h4>
+            <hr>
+            <h5 style="text-align: center"><%= @vespa.price %> euros / jour
+            </h5>
+
+          </div>
+          <div class="card-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <hr>
+            <button type="button" class="btn btn-outline-danger w-100">Reserver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-12">
+         <div class="card card-outline-secondary my-4" id="photos">
+          <div class="card-header">
+            <h2><strong>Photos</strong></h2>
+          </div>
+          <div class="cards">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1516423485787-e433022a4801?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80)">
+
+             <div></div>
+            </div>
+
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1557073725-b890f79efd27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)">
+              2
+            </div>
+
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521118702313-63fca89fe1fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80)">
+              3
+            </div>
+          </div>
+
+        </div>
+      </div>
+     </div>
+
+  <!--  -->
+    <div class="row">
+      <div class="col-md-12">
+         <div class="card card-outline-secondary my-4" id="booking">
+          <div class="card-header">
+            <h2><strong>Product Reviews</strong></h2>
+          </div>
+          <div class="card-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+            <hr>
+            <button type="button" class="btn btn-outline-dark">Laisser un commentaire</button>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+
+
+
