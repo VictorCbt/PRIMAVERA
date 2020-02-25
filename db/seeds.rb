@@ -5,3 +5,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+
+user1 = User.create!(email: "carlo@test.fr", first_name: "Carlo", last_name: "Test", password: "123456", password_confirmation: "123456")
+user2 = User.create!(email: "claudio@test.fr", first_name: "Claudio", last_name: "Test", password: "123456", password_confirmation: "123456")
+user3 = User.create!(email: "marco@test.fr", first_name: "Marco", last_name: "Test", password: "123456", password_confirmation: "123456")
+user4 = User.create!(email: "julio@test.fr", first_name: "Julio", last_name: "Test", password: "123456", password_confirmation: "123456")
+
+
+
+vespa1 = Vespa.create!(name: "Magnifique Vespa Primavera 1978 pour découvrir la belle ville de Saint-Etienne", model: "Vespa Primavera 1978", cylinder: "50cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 39, address: "1 Place Villebœuf, 42100 Saint-Étienne", user_id: user1.id)
+vespa2 = Vespa.create!(name: "Magnifique Vespa Nuova 1965 pour découvrir la belle ville de Saint-Etienne", model: "Vespa Nuova 1965", cylinder: "125cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 49, address: "1 Place Villebœuf, 42100 Saint-Étienne", user_id: user1.id)
+vespa3 = Vespa.create!(name: "Magnifique Vespa GT 1923 découvrir la belle ville de Saint-Etienne", model: "Vespa GT 1923", cylinder: "250cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 99, address: "1 Place Villebœuf, 42100 Saint-Étienne", user_id: user1.id)
+vespa4 = Vespa.create!(name: "Magnifique Vespa sprint 1754 pour découvrir la belle ville de Saint-Etienne", model: "Vespa sprint 1754", cylinder: "300cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 319, address: "1 Place Villebœuf, 42100 Saint-Étienne", user_id: user1.id)
+vespa5 = Vespa.create!(name: "Magnifique Vespa Primavera Turbo Diesel Sport 2019 pour découvrir la belle ville de Saint-Etienne", model: "Vespa Primavera Turbo Diesel Sport 2019", cylinder: "electrique", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 999, address: "1 Place Villebœuf, 42100 Saint-Étienne", user_id: user1.id)
+
+vespa6 = Vespa.create!(name: "Escapade en amoureux dans le forez sur notre Vespa Primavera 1978", model: "Vespa Primavera 1978", cylinder: "50cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 35, address: "16 Rue Georges Teissier, 42000 Saint-Étienne", user_id: user2.id)
+vespa7 = Vespa.create!(name: "Escapade en amoureux dans le forez sur notre Vespa Nuova 1965", model: "Vespa Primavera 1978", cylinder: "125cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 54, address: "16 Rue Georges Teissier, 42000 Saint-Étienne", user_id: user2.id)
+vespa8 = Vespa.create!(name: "Escapade en amoureux dans le forez sur notre Vespa GT 1923", model: "Vespa GT 1923", cylinder: "250cc", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 18, address: "16 Rue Georges Teissier, 42000 Saint-Étienne", user_id: user2.id)
+vespa9 = Vespa.create!(name: "Escapade en amoureux dans le forez sur notre Vespa sprint 1754", model: "Vespa sprint 1754", cylinder: "electrique", description: "Rouler avec style et faites de la Primavera votre première Vespa. Le moteur 4 temps 50cc refroidi par air, équipé d'une injection électronique, vous assure qualité et fiabilité. Il permet une réduction extraordinaire de la consommation de carburant et des émissions de CO2. Le moteur parfait pour votre premier véhicule. Il ne vous reste plus qu'à choisir la couleur qui vous correspond le mieux.", price: 24, address: "16 Rue Georges Teissier, 42000 Saint-Étienne", user_id: user2.id)
+
+
+
+booking1 = Booking.create!(date: "Sat, 11 Nov 2007", confirmation: false, user_id: user3.id, vespa_id: vespa1.id)
+booking2 = Booking.create!(date: "Sat, 12 Nov 2008", confirmation: false, user_id: user3.id, vespa_id: vespa7.id)
+booking3 = Booking.create!(date: "Sat, 13 Nov 2009", confirmation: true, user_id: user3.id, vespa_id: vespa4.id)
+booking4 = Booking.create!(date: "Sat, 14 Nov 2010", confirmation: true, user_id: user3.id, vespa_id: vespa8.id)
+booking5 = Booking.create!(date: "Sat, 15 Nov 2011", confirmation: false, user_id: user3.id, vespa_id: vespa4.id)
+booking6 = Booking.create!(date: "Sat, 16 Nov 2012", confirmation: false, user_id: user4.id, vespa_id: vespa2.id)
+booking7 = Booking.create!(date: "Sat, 17 Nov 2013", confirmation: false, user_id: user4.id, vespa_id: vespa7.id)
+booking8 = Booking.create!(date: "Sat, 18 Nov 2014", confirmation: true, user_id: user4.id, vespa_id: vespa9.id)
+
+
+review1 = Review.create!(coment: "Top ! Superbe balade !", rating: 5, booking_id: booking2.id)
+review2 = Review.create!(coment: "Quelle ville immonde !", rating: 1, booking_id: booking7.id)
+review3 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement la Vespa est équipée d'une belle jupe !", rating: 5, booking_id: booking3.id)
+review4 = Review.create!(coment: "Bof !", rating: 3, booking_id: booking5.id)
+review5 = Review.create!(coment: "A refaire, je recommande !", rating: 4, booking_id: booking1.id)
