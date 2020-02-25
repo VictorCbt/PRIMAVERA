@@ -7,7 +7,7 @@ class Vespa < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :model, presence: true
-  validates :cylinder, presence: true, inclusion: { in: %w(50cc 125cc 250cc 300cc electrique)}
+  validates :cylinder, presence: true, inclusion: { in: %w(50cc 125cc 250cc 300cc Electrique)}
   validates :description, presence: true
   validates :price, presence: true
   validates :address, presence: true
