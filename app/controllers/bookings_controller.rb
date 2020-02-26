@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     @booking.vespa = @vespa
     @booking.user = current_user
     @booking.save!
-
   end
 
   def show
@@ -28,8 +27,3 @@ class BookingsController < ApplicationController
   end
 
 end
-
-# date
-# confirmation
-# user_id
-# vespa_id
