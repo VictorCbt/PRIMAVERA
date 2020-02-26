@@ -12,3 +12,11 @@ class Vespa < ApplicationRecord
   validates :price, presence: true
   validates :address, presence: true
 end
+
+def self.search(search)
+  if search
+    Vespa.where('lower(address) LIKE ?', search[:address].downcase)
+  else
+    Vespa.all
+  end
+end

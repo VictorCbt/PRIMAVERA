@@ -1,5 +1,25 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
-<% @bookings.each do |booking| %>
-<%= booking %>
-<% end %>
+<div class="bookings">
+  <div class="informations">
+    <h1>Vos réservations</h1>
+
+
+    <p>Voici l'ID de vos réservations :</p>
+    <% @bookings.each do |booking| %>
+    <%= booking.id %>
+    <% end %>
+
+    <hr>
+
+    <p>Voici l'ID de vos vespas :</p>
+    <% @bookings.each do |bookingvespaid| %>
+    <%= bookingvespaid.vespa_id %>
+    <% end %>
+
+    <hr>
+
+    <p>Et vos dates de réservations sont :</p>
+    <% @bookings.each do |bookingdate| %>
+    <%= bookingdate.date %>
+    <% end %>
+  </div>
+</div>
