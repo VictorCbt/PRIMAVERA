@@ -38,15 +38,10 @@ review3 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement
 review4 = Review.create!(coment: "Bof !", rating: 3, booking_id: booking5.id)
 review5 = Review.create!(coment: "A refaire, je recommande !", rating: 4, booking_id: booking1.id)
 
-
-
 require "open-uri"
-
-p "je suis la"
 
 file1 = URI.open('https://images.pexels.com/photos/3599586/pexels-photo-3599586.jpeg?cs=srgb&dl=orange-motorcycle-on-gray-concrete-road-3599586.jpg&fm=jpg')
 vespa1.photo.attach(io: file1, filename: 'vespa1.png', content_type: 'image/png')
-p file1
 file2 = URI.open('https://images.pexels.com/photos/221299/pexels-photo-221299.jpeg?cs=srgb&dl=architecture-automotive-building-cafe-221299.jpg&fm=jpg')
 vespa2.photo.attach(io: file2, filename: 'vespa2.png', content_type: 'image/png')
 file3 = URI.open('https://images.pexels.com/photos/995487/pexels-photo-995487.jpeg?cs=srgb&dl=photography-of-classic-motorcycle-on-road-995487.jpg&fm=jpg')
