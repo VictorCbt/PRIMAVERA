@@ -2,7 +2,7 @@ class VespasController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
-    @vespas = Vespa.all
+    @vespas = Vespa.search(params[:search][:query])
   end
 
   def new
@@ -29,7 +29,11 @@ class VespasController < ApplicationController
 
   private
 
-   def vespas_strong_params
+  def vespas_strong_params
     params.require(:vespa).permit(:name, :model, :cylinder, :description, :price, :address, :photo)
+  end
+
+  def search_params
+    params.permit(:search, :address)
   end
 end

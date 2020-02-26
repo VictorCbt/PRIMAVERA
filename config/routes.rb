@@ -13,4 +13,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :new, :create]
   end
   resources :bookings, only: [:index]
+  get 'pages/offers'
+
+
 end
