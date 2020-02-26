@@ -1,0 +1,6 @@
+<%= simple_form_for [vespa, review] do |f| %>
+  <%= f.input :coment %>
+  <%= f.input :rating %>
+  <hr>
+  <%= f.button :submit, class: "btn btn-outline-danger w-100", value: "Commenter" %>
+<% end %>
