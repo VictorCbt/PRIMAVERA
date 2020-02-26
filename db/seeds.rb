@@ -34,14 +34,17 @@ booking8 = Booking.create!(date: "Sat, 18 Nov 2014", confirmation: true, user_id
 
 review1 = Review.create!(coment: "Top ! Superbe balade !", rating: 5, vespa_id: vespa1.id)
 review2 = Review.create!(coment: "Quelle ville immonde !", rating: 1, vespa_id: vespa3.id)
-review3 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement la Vespa est équipée d'une belle jupe !", rating: 5, booking_id: vespa3.id)
+review3 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement la Vespa est équipée d'une belle jupe !", rating: 5, vespa_id: vespa3.id)
 review4 = Review.create!(coment: "Bof !", rating: 3, vespa_id: vespa4.id)
 review5 = Review.create!(coment: "A refaire, je recommande !", rating: 4, vespa_id: vespa1.id)
 review6 = Review.create!(coment: "Top ! Superbe balade !", rating: 5, vespa_id: vespa1.id)
 review7 = Review.create!(coment: "Quelle ville immonde !", rating: 1, vespa_id: vespa3.id)
-review8 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement la Vespa est équipée d'une belle jupe !", rating: 5, booking_id: vespa3.id)
+review8 = Review.create!(coment: "Sympa malgré les trompes d'eau ! Heureusement la Vespa est équipée d'une belle jupe !", rating: 5, vespa_id: vespa3.id)
 review9 = Review.create!(coment: "Bof !", rating: 3, vespa_id: vespa2.id)
 review10 = Review.create!(coment: "A refaire, je recommande !", rating: 4, vespa_id: vespa4.id)
+
+
+
 
 require "open-uri"
 

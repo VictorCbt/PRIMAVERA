@@ -10,14 +10,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_strong_param)
     @booking.vespa = @vespa
     @booking.user = current_user
-    @booking.save!
+    @booking.save
   end
 
   def show
   end
 
   def index
-    @bookings = current_user.bookings
+    @booking = Booking.all
   end
 
   private
