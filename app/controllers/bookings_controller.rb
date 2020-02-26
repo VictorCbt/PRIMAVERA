@@ -10,8 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_strong_param)
     @booking.vespa = @vespa
     @booking.user = current_user
-    @booking.save!
-
+    @booking.save
   end
 
   def show
@@ -28,8 +27,3 @@ class BookingsController < ApplicationController
   end
 
 end
-
-# date
-# confirmation
-# user_id
-# vespa_id

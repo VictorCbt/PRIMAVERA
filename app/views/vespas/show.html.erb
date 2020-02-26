@@ -6,6 +6,7 @@
 
   <div class="container">
 
+      <!--  CONTENT -->
 
     <div class="row">
       <div class="col-md-8">
@@ -34,6 +35,8 @@
       </div>
     </div>
 
+  <!--  PHOTOS -->
+
      <div class="row">
       <div class="col-md-12">
          <div class="card card-outline-secondary my-4" id="photos">
@@ -48,21 +51,18 @@
               1
             </div>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1557073725-b890f79efd27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)">
-              2
             </div>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521118702313-63fca89fe1fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80)">
-              3
             </div>
           </div>
-
         </div>
       </div>
      </div>
 
-  <!--  -->
+  <!--  BOOKING PART -->
     <div class="row">
       <div class="col-md-12">
-         <div class="card card-outline-secondary my-4" id="booking">
+         <div class="card card-outline-secondary my-4" id="review">
           <div class="card-header">
             <h2><strong>Product Reviews</strong></h2>
           </div>
@@ -70,12 +70,40 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <button type="button" class="btn btn-outline-dark">Laisser un commentaire</button>
+               <% if @booked_by_current_user %>
+                  <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                  Deposer un commentaire
+                </button>
+
+                <!-- Modal button commentaire-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Formulaire de commentaire</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= render "reviews/new", vespa: @vespa, review: @review %>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+
           </div>
         </div>
       </div>
      </div>
   </div>
+
+
+
+
 
 
 

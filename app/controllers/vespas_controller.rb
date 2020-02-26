@@ -22,6 +22,8 @@ class VespasController < ApplicationController
   def show
     @vespa = Vespa.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
+    @booked_by_current_user = booked_by_current_user?
   end
 
   def destroy
@@ -29,7 +31,14 @@ class VespasController < ApplicationController
 
   private
 
-  def vespas_strong_params
+  def booked_by_current_user?
+    users = @vespa.bookings.map do |booking|
+      booking.user
+    end
+    users.include?(current_user)
+  end
+
+   def vespas_strong_params
     params.require(:vespa).permit(:name, :model, :cylinder, :description, :price, :address, :photo)
   end
 
