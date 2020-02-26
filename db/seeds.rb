@@ -45,7 +45,6 @@ review10 = Review.create!(coment: "A refaire, je recommande !", rating: 4, vespa
 
 
 
-
 require "open-uri"
 
 file1 = URI.open('https://images.pexels.com/photos/3599586/pexels-photo-3599586.jpeg?cs=srgb&dl=orange-motorcycle-on-gray-concrete-road-3599586.jpg&fm=jpg')
