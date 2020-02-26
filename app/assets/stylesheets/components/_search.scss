@@ -1,17 +1,18 @@
 .search-form-control {
   position: relative;
   margin-top: 20px;
-  width: 1000px;
-  display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .search-form-control .btn {
   position: absolute;
   top: 8px;
   bottom: 8px;
-  right: 8px;
+  right: 2px;
 }
 
 .search-form-control .form-control {

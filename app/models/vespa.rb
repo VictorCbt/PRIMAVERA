@@ -1,7 +1,7 @@
 class Vespa < ApplicationRecord
   belongs_to :user
   has_many  :bookings, dependent: :destroy
-  has_many :reviews, through: :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   has_one_attached :photo
 
@@ -14,4 +14,12 @@ class Vespa < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+end
+
+def self.search(search)
+  if search
+    Vespa.where('lower(address) LIKE ?', search[:address].downcase)
+  else
+    Vespa.all
+  end
 end

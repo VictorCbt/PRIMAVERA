@@ -1,52 +1,49 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="home">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-  </div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="home">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "https://www.stickpng.com/assets/images/580b585b2edbce24c47b2d18.png" %>
+      <% end %>
+    </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
 
-      <div class="navbar-center">
-        <p class="nav-item">
-          <%= link_to "Publier une offre", "#", class: "nav-link" %>
-        </li>
-        <p class="nav-item">
-          <%= link_to "Mes offres", "#", class: "nav-link" %>
-        </li>
-        <p class="nav-item">
-          <%= link_to "Mes réservations", "#", class: "nav-link" %>
-        </li>
+        <div class="navbar-center">
+          <p class="nav-item">
+            <%= link_to "Publier une offre", new_vespa_path, class: "nav-link" %>
+          </li>
+          <p class="nav-item">
+            <%= link_to "Mes offres", pages_offers_path, class: "nav-link" %>
+          </li>
+          <p class="nav-item">
+            <%= link_to "Mes réservations", bookings_path, class: "nav-link" %>
+          </li>
+        </div>
       </div>
     </div>
-  </div>
 
-      <div class="avatar">
-
-        <div>
-          <div class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
+        <div class="avatar">
+            <div class="nav-item dropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Action", "#", class: "dropdown-item" %>
+                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
           </div>
         </div>
 
-      </div>
-
-      <% else %>
-        <p class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <% end %>
-    </ul>
+        <% else %>
+          <p class="nav-item-logout">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
