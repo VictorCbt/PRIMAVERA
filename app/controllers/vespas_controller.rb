@@ -2,7 +2,15 @@ class VespasController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
-    @vespas = Vespa.all
+    @vespas = Vespa.geocoded #returns Vespa with coordinates
+
+    @markers = @vespas.map do |vespa|
+      {
+        lat: vespa.latitude,
+        lng: vespa.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { vespa: vespa })
+      }
+    end
   end
 
   def new
