@@ -1,31 +1,29 @@
-<h1 class='title-page-result'>Vespas correspondants à la recherche >>> rajouter des filtres</h1>
+<h1 class='title-page'>Résultat de la recherche</h1>
 <div class="results-container">
   <div class="cards-result">
-    <ul style="list-style-type: none">
+    <div style="list-style-type: none">
       <% @vespas.each do |vespa| %>
-        <li>
-          <div class="card-result">
-            <div>
-            <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+        <div class="card-result">
+          <div>
+          <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+          </div>
+          <div class="card-result-text">
+            <div class="card-result-infos">
+              <h2><%= vespa.name %></h2>
+              <p><%= vespa.cylinder %> - <%= vespa.model %></p>
+              <hr>
+              <h2>Chez <%= vespa.user.first_name %> !</h2>
             </div>
-            <div class="card-result-text">
-              <div class="card-result-infos">
-                <h2><%= vespa.name %></h2>
-                <p><%= vespa.cylinder %> - <%= vespa.model %></p>
-                <hr>
-                <h2>Chez <%= vespa.user.first_name %> !</h2>
-              </div>
-              <div class="card-result-pricing">
-                <h2><%= vespa.price %> € / jour</h2>
-                <div class="btn btn-info">
-                  <%= link_to "Plus d'info", vespa_path(vespa) %>
-                </div>
+            <div class="card-result-pricing">
+              <h2><%= vespa.price %> € / jour</h2>
+              <div class="btn btn-info">
+                <%= link_to "Plus d'info", vespa_path(vespa) %>
               </div>
             </div>
           </div>
-        </li>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
   <div
     id="map"

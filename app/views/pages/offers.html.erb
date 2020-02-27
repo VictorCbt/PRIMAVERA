@@ -1,3 +1,26 @@
-<h1><%= current_user.vespas.each do |vespa| %></h1>
-<%= vespa %>
-<% end %>
+<h1 class='title-page'>Mes Vespas</h1>
+<div class="cards-offre">
+  <% current_user.vespas.each do |vespa| %>
+    <div class="card-offre">
+      <div>
+      <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+      </div>
+      <div class="card-offre-infos">
+        <div class="card-offre-text">
+          <h2><%= vespa.model %></h2>
+          <p><%= vespa.cylinder %></p>
+          <p><%= vespa.price %> € / jour</p>
+        </div>
+        <div class="card-offre-button">
+          <div class="btn btn-light">
+            <%= link_to "Mettre à jour", edit_vespa_path(vespa) %>
+          </div>
+           <div class="btn btn-danger">
+            <%= link_to "Supprimer", vespa_path(vespa), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

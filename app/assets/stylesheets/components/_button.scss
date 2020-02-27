@@ -1,6 +1,40 @@
 .btn-info > a {
   color: white;
   text-decoration: none;
-  justify-content: flex-end;
   display: flex;
+  justify-content: center;
+}
+
+.btn-light > a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-light {
+  background-color: #3398db;
+  opacity: 0.7;
+}
+
+.btn-light:hover {
+  background-color: #308ec9;
+}
+
+.btn-danger > a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-danger {
+  opacity: 0.7;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #c8d8d5;
+  border-color: #adbcb9;
+}
+
+.btn-primary:hover {
+  background-color:  #adbcb9;
+  border-color: #adbcb9;
 }
