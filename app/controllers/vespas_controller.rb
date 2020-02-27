@@ -38,7 +38,22 @@ class VespasController < ApplicationController
     @booked_by_current_user = booked_by_current_user?
   end
 
+  def edit
+    @vespa = Vespa.find(params[:id])
+  end
+
+  def update
+    @vespa = Vespa.find(params[:id])
+    @vespa.update!(vespas_strong_params)
+
+    redirect_to vespa_path(@vespa)
+  end
+
   def destroy
+    @vespa = Vespa.find(params[:id])
+    @vespa.destroy!
+
+    redirect_to pages_offers_path
   end
 
   private
