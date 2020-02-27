@@ -1,4 +1,10 @@
 class Vespa < ApplicationRecord
+    include PgSearch::Model
+  pg_search_scope :search_by_address_or_cylinder,
+    against: [ :address, :cylinder ],
+    using: {
+      tsearch: { prefix: true } # <-- now `las vega la` will return something!
+    }
   belongs_to :user
   has_many  :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
