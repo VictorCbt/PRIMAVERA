@@ -1,2 +1,31 @@
-<h1>Vespas#index</h1>
-<p>Find me in app/views/vespas/index.html.erb</p>
+<h1 class='title-page-result'>Vespas correspondants à la recherche</h1>
+<div class="results-container">
+  <div class="cards-result">
+    <ul style="list-style-type: none">
+      <% @vespas.each do |vespa| %>
+        <li>
+          <div class="card-result">
+            <div>
+            <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+            </div>
+            <div class="card-result-text">
+              <div class="card-result-infos">
+                <h2><%= vespa.name %></h2>
+                <p><%= vespa.model %></p>
+                <p><%= vespa.cylinder %></p>
+              </div>
+              <div class="card-result-pricing">
+                <h2><%= vespa.price %> €</h2>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>

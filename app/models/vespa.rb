@@ -11,4 +11,15 @@ class Vespa < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :address, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+end
+
+def self.search(search)
+  if search
+    Vespa.where('lower(address) LIKE ?', search[:address].downcase)
+  else
+    Vespa.all
+  end
 end
