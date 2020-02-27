@@ -2,9 +2,13 @@ class VespasController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
-    @vespas = Vespa.geocoded #returns Vespa with coordinates
-
-    @markers = @vespas.map do |vespa|
+    if params[:query].present?
+      sql_query = "address ILIKE :query OR model ILIKE :query OR cylinder ILIKE :query"
+      @vespas = Vespa.geocoded.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @vespas = Vespa.geocoded
+    end
+      @markers = @vespas.map do |vespa|
       {
         lat: vespa.latitude,
         lng: vespa.longitude,
@@ -48,9 +52,5 @@ class VespasController < ApplicationController
 
    def vespas_strong_params
     params.require(:vespa).permit(:name, :model, :cylinder, :description, :price, :address, :photo)
-  end
-
-  def search_params
-    params.permit(:search, :address)
   end
 end

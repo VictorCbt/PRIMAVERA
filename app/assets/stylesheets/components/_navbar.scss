@@ -1,6 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: fixed;
+  width: 100%;
+  background:rgba(255,255,255,.3);
+}
+
+.nav-link {
+  color: white !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,8 +21,6 @@
 .orga-navbar {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-
 }
 
 .home {
@@ -26,6 +31,7 @@
 .navbar-center {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .avatar {
