@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
     @vespa = Vespa.find(params[:vespa_id])
     @review = Review.new(review_strong_param)
     @review.vespa = @vespa
+    @review.user = current_user
     if @review.save
       redirect_to @vespa, notice: "Votre commentaire a été déposé"
     end

@@ -10,7 +10,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_strong_param)
     @booking.vespa = @vespa
     @booking.user = current_user
-    @booking.save
+    if @booking.save
+      redirect_to bookings_path, notice: "Votre reservation a été effectuée"
+    end
   end
 
   def show
