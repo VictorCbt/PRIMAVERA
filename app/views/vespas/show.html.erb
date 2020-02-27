@@ -64,11 +64,24 @@
       <div class="col-md-12">
          <div class="card card-outline-secondary my-4" id="review">
           <div class="card-header">
-            <h2><strong>Product Reviews</strong></h2>
+            <h2><strong>Mes commentaires</strong></h2>
           </div>
           <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+              <% @vespa.reviews.each do |review| %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="badge badge-primary badge-pill">
+                  <% counter = 0 %>
+                  <% 5.times do %>
+                    <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
+                  <% end %>
+                </span>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <%= review.coment %>
+                  <small class="text-muted">Posted by <%= @vespa.user.first_name %> on 28/02/20</small>
+                </li>
+              </li>
+            <% end %>
             <hr>
                <% if @booked_by_current_user %>
                   <!-- Button trigger modal -->
