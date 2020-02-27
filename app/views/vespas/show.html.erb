@@ -45,10 +45,9 @@
           </div>
           <div class="cards">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            <% if @vespa.photo.attached? %>
-            url('<%= cl_image_path @vespa.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <% end %>
-              1
+              <% if @vespa.photo.attached? %>
+              url('<%= cl_image_path @vespa.photo.key, height: 300, width: 400, crop: :fill %>')">
+              <% end %>
             </div>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1557073725-b890f79efd27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)">
             </div>

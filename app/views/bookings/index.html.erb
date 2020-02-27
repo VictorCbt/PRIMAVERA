@@ -1,25 +1,40 @@
-<div class="bookings">
-  <div class="informations">
+
+<div class="container">
+  <table class="table table-bordered">
+    <br>
+
     <h1>Vos réservations</h1>
+     <br>
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Vespa</th>
+      <th scope="col">Date</th>
+      <th scope="col">Tarif</th>
+      <th scope="col">statut</th>
+    </tr>
+  </thead>
+
+  <% @bookings.each do |booking| %>
+    <tbody>
+      <tr>
+        <td><small class="text-muted">Par:</small> <%= booking.user.first_name %> <strong><%= booking.user.last_name %></strong>  </td>
+        <td><small class="text-muted">Pour la Vespa:</small>  <%= booking.vespa.model %> </td>
+        <td><small class="text-muted">A la date du:</small>  <%= booking.date %> </td>
+        <td><small class="text-muted">Au tarif de:</small> <%= booking.vespa.price %> euros</td>
+        <td><small class="text-muted"></small>
+          <% if booking.confirmation == false %>
+           <%= link_to confirm_booking_path(booking), method: :patch do  %>
+             <button class="btn btn-outline-danger w-100">Confirmer</button>
+
+           <% end %>
+          <% else %>
+          <%= "Confirmé" %>
+          <% end %>
+        </td>
+  <% end %>
+</table>
 
 
-    <p>Voici l'ID de vos réservations :</p>
-    <% @bookings.each do |booking| %>
-    <%= booking.id %>
-    <% end %>
-
-    <hr>
-
-    <p>Voici l'ID de vos vespas :</p>
-    <% @bookings.each do |bookingvespaid| %>
-    <%= bookingvespaid.vespa_id %>
-    <% end %>
-
-    <hr>
-
-    <p>Et vos dates de réservations sont :</p>
-    <% @bookings.each do |bookingdate| %>
-    <%= bookingdate.date %>
-    <% end %>
-  </div>
 </div>
+

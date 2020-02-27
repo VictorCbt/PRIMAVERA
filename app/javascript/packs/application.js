@@ -12,3 +12,12 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+console.log("je usi la")
+initSweetalert('#sweet-alert-demo', {
+  title: "Reservation confirmée",
+  text: "Reservation confirmée!",
+  icon: "success"
+});

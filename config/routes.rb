@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :new, :create]
     resources :reviews, only: [:index, :show, :new, :create]
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index] do
+    member do
+      patch :confirm
+    end
+  end
   get 'pages/offers'
 
 

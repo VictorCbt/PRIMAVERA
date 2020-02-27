@@ -22,6 +22,12 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.confirm!
+    redirect_to bookings_path
+  end
+
   private
 
   def booking_strong_param
