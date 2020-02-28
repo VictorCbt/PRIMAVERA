@@ -15,9 +15,13 @@ initMapbox();
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-console.log("je usi la")
 initSweetalert('#sweet-alert-demo', {
   title: "Reservation confirmée",
   text: "Reservation confirmée!",
   icon: "success"
 });
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+initAutocomplete();
+
