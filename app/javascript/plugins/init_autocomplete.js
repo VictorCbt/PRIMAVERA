@@ -7,4 +7,11 @@ const initAutocomplete = () => {
   }
 };
 
-export { initAutocomplete };
+const initAutocomplete2 = () => {
+  const queryInput2 = document.getElementById('vespa_address');
+  if (queryInput2) {
+    places({ container: queryInput2 });
+  }
+};
+
+export { initAutocomplete, initAutocomplete2 };

@@ -22,6 +22,8 @@ initSweetalert('#sweet-alert-demo', {
 });
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initAutocomplete2 } from '../plugins/init_autocomplete';
 
 initAutocomplete();
+initAutocomplete2();
 
