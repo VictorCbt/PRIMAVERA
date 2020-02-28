@@ -3,8 +3,7 @@ class VespasController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "address ILIKE :query OR model ILIKE :query OR cylinder ILIKE :query"
-      @vespas = Vespa.geocoded.where(sql_query, query: "%#{params[:query]}%")
+      @vespas = Vespa.near(params[:query])
     else
       @vespas = Vespa.geocoded
     end
