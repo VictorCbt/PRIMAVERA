@@ -16,8 +16,8 @@ initMapbox();
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
-  title: "Reservation confirmée",
-  text: "Reservation confirmée!",
+  title: "Welcome",
+  text: "Welcome!",
   icon: "success"
 });
 
