@@ -1,36 +1,72 @@
+<% if @bookings.empty? %>
+    <% else %>
 <h1 class='title-page'>Mes réservations</h1>
-<div class="container">
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Nom</th>
-      <th scope="col">Vespa</th>
-      <th scope="col">Date</th>
-      <th scope="col">Tarif</th>
-      <th scope="col">statut</th>
-    </tr>
-  </thead>
+  <div class="container" style="padding: 15px 0 30px 0">
 
-  <% @bookings.each do |booking| %>
-    <tbody>
+    <table class="table table-bordered">
+    <thead style="background-color: #c8d8d5; color: white">
       <tr>
-        <td><small class="text-muted">Par:</small> <%= booking.user.first_name %> <strong><%= booking.user.last_name %></strong>  </td>
-        <td><small class="text-muted">Pour la Vespa:</small>  <%= booking.vespa.model %> </td>
-        <td><small class="text-muted">A la date du:</small>  <%= booking.date %> </td>
-        <td><small class="text-muted">Au tarif de:</small> <%= booking.vespa.price %> euros</td>
-        <td><small class="text-muted"></small>
-          <% if booking.confirmation == false %>
-           <%= link_to confirm_booking_path(booking), method: :patch do  %>
-             <button class="btn btn-outline-danger w-100">Confirmer</button>
+        <th scope="col">Loueur</th>
+        <th scope="col">Votre Vespa</th>
+        <th scope="col">Réservée pour le</th>
+        <th scope="col">Tarif</th>
+        <th scope="col">Statut de la réservation</th>
+      </tr>
+    </thead>
 
-           <% end %>
-          <% else %>
-          <%= "Confirmé" %>
-          <% end %>
-        </td>
-  <% end %>
-</table>
+    <% @bookings.each do |booking| %>
+      <tbody>
+        <tr>
+          <td><small class="text-muted"></small> <%= booking.vespa.user.first_name %> <%= booking.vespa.user.last_name %> </td>
+          <td><small class="text-muted"></small>  <%= booking.vespa.model %> </td>
+          <td><small class="text-muted"></small>  <%= booking.date %> </td>
+          <td><small class="text-muted"></small> <%= booking.vespa.price %> euros</td>
+          <td><small class="text-muted"></small>
+            <% if booking.confirmation == false %>
+              <strong>En attente de confirmation</strong>
+            <% else %>
+              <strong>Confirmé</strong>
+            <% end %>
+          </td>
+    <% end %>
+  </table>
+  </div>
+<% end %>
 
+<% if @owner_bookings.empty? %>
+    <% else %>
+<h1 class='title-page'>Mes réservations à traiter</h1>
+  <div class="container" style="padding: 15px 0 30px 0">
+    <table class="table table-bordered">
+    <thead style="background-color: #c8d8d5; color: white">
+      <tr>
+        <th scope="col">Client</th>
+        <th scope="col">Vespa réservée</th>
+        <th scope="col">Réservée pour le</th>
+        <th scope="col">Tarif</th>
+        <th scope="col">Statut de la réservation</th>
+      </tr>
+    </thead>
 
-</div>
+    <% @owner_bookings.each do |booking| %>
+      <tbody>
+        <tr>
+          <td><small class="text-muted"></small> <%= booking.user.first_name %> <%= booking.user.last_name %> </td>
+          <td><small class="text-muted"></small>  <%= booking.vespa.model %> </td>
+          <td><small class="text-muted"></small>  <%= booking.date %> </td>
+          <td><small class="text-muted"></small> <%= booking.vespa.price %> euros</td>
+          <td><small class="text-muted"></small>
+            <% if booking.confirmation == false %>
+             <%= link_to confirm_booking_path(booking), method: :patch do  %>
+               <button class="btn btn-outline-danger w-100">Confirmer</button>
+
+             <% end %>
+            <% else %>
+            <strong><%= "Confirmé" %></strong>
+            <% end %>
+          </td>
+    <% end %>
+  </table>
+  </div>
+<% end %>
 

@@ -13,6 +13,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-photo {
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  height: 600px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

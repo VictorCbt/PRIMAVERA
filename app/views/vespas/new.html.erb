@@ -6,7 +6,7 @@
 
       <%= simple_form_for @vespa do |f| %>
         <%= f.input :name, label: 'Titre de votre annonce' %>
-        <%= f.input :model, label: 'Modele' %>
+        <%= f.input :model, label: 'Modèle' %>
         <%= f.input :cylinder, label: 'Cylindrée : 50|125|250|300|Electrique', collection: ["50cc","125cc","250cc","300cc","Electrique"] %>
         <%= f.input :description %>
         <%= f.input :photo, as: :file %>
