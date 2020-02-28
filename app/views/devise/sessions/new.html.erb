@@ -1,7 +1,10 @@
-<h2>Log in</h2>
-
+<br>
+<br>
+<br>
+<h2 style="width: 800px; margin: auto">Se connecter</h2>
+<br>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs" style="width: 800px; margin: auto">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -12,9 +15,12 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions" style="width: 800px; margin: auto">
+    <%= f.button :submit, class: "btn btn-outline-danger w-100", value: "Se connecter" %>
   </div>
 <% end %>
+<br>
+<div style="width: 800px; margin: auto">
+ <%= render "devise/shared/links" %>
+</div>
 
-<%= render "devise/shared/links" %>
