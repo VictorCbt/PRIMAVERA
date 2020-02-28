@@ -66,6 +66,6 @@ class VespasController < ApplicationController
   end
 
    def vespas_strong_params
-    params.require(:vespa).permit(:name, :model, :cylinder, :description, :price, :address, :photo)
+    params.require(:vespa).permit(:name, :model, :cylinder, :description, :price, :address, photos: [])
   end
 end

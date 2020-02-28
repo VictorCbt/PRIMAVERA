@@ -3,7 +3,7 @@
   <% current_user.vespas.each do |vespa| %>
     <div class="card-offre">
       <div>
-      <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+      <%= cl_image_tag vespa.photos[0], height: 200, width: 300, crop: :fill if vespa.photos.attached? %>
       </div>
       <div class="card-offre-infos">
         <div class="card-offre-text">

@@ -5,7 +5,7 @@
       <% @vespas.each do |vespa| %>
         <div class="card-result">
           <div>
-          <%= cl_image_tag vespa.photo.key, height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
+          <%= cl_image_tag vespa.photos[0], height: 200, width: 300, crop: :fill if vespa.photo.attached? %>
           </div>
           <div class="card-result-text">
             <div class="card-result-infos">

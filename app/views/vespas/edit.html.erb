@@ -9,7 +9,7 @@
         <%= f.input :model, label: 'Modele' %>
         <%= f.input :cylinder, label: 'Cylindrée : 50|125|250|300|Electrique', collection: ["50cc","125cc","250cc","300cc","Electrique"] %>
         <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
         <%= f.input :price, label: 'Tarif à la journée'%>
         <%= f.input :address, label: 'Veuillez choisir une adresse' %>
         <%= f.button :submit, "Valider", class: 'btn btn-primary' %>
