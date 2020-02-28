@@ -29,19 +29,25 @@
       <hr>
         <div class="cards-home row">
           <div class="col-8 col-md-8 col-lg-3">
+            <%= link_to "/vespas?query=Saint-Étienne" do %>
               <div class="card-home" id="etienne">
                 <h2>St-Etienne</h2>
               </div>
+            <% end %>
           </div>
+          <%= link_to "/vespas?query=Lyon" do %>
             <div class="col-8 col-md-8 col-lg-3">
               <div class="card-home" id="lyon">
                 <h2>Lyon</h2>
               </div>
+          <% end %>
             </div>
+          <%= link_to "/vespas?query=Rome" do %>
             <div class="col-8 col-md-8 col-lg-3">
               <div class="card-home"  id="rome">
                 <h2>Rome</h2>
               </div>
+          <% end %>
             </div>
           </div>
       <hr>
